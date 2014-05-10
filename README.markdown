@@ -1,4 +1,5 @@
-# NIST test vectors in text
+# NIST textvectors
+## NIST cryptographic standard test-vectors in text
 
 NIST CSRC's Crypto Toolkit helpfully provides test vectors as PDFs.
 
@@ -38,10 +39,12 @@ Approximate guidelines for contributions:
 POSIX-compatible environment and Python >= 2.7.
 
 On OSX/Homebrew, just do:
+
     brew install wget parallel
     pip install -r requirements.txt
 
 On Ubuntu, do:
+
     sudo apt-get install wget parallel python-pip
     sudo pip install more_itertools
 
