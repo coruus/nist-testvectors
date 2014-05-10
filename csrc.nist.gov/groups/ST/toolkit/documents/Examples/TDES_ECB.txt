@@ -1,0 +1,116 @@
+--------------------------------------------------------------
+--------------------------------------------------------------
+##############################################################
+Block Cipher Modes of Operation
+Electronic Codebook (ECB)
+##############################################################
+ECB-TDES (Encryption)
+Key1 is
+01234567 89ABCDEF
+Key2 is
+23456789 ABCDEF01
+Key3 is
+456789AB CDEF0123
+Plaintext is
+6BC1BEE2 2E409F96 E93D7E11 7393172A
+AE2D8A57 1E03AC9C 9EB76FAC 45AF8E51
+Block #1
+Blockin 6BC1BEE2 2E409F96
+Blockout 714772F3 39841D34
+Block #2
+Blockin E93D7E11 7393172A
+Blockout 267FCC4B D2949CC3
+Block #3
+Blockin AE2D8A57 1E03AC9C
+Blockout EE11C22A 576A3038
+Block #4
+Blockin 9EB76FAC 45AF8E51
+Blockout 76183F99 C0B6DE87
+Ciphertext is
+714772F3 39841D34 267FCC4B D2949CC3
+EE11C22A 576A3038 76183F99 C0B6DE87
+==============================================================
+ECB-TDES (Decryption)
+--------------------------------------------------------------
+Key1 is
+01234567 89ABCDEF
+Key2 is
+23456789 ABCDEF01
+Key3 is
+456789AB CDEF0123
+Ciphertext is
+714772F3 39841D34 267FCC4B D2949CC3
+EE11C22A 576A3038 76183F99 C0B6DE87
+Block #1
+Blockin 714772F3 39841D34
+Blockout 6BC1BEE2 2E409F96
+Block #2
+Blockin 267FCC4B D2949CC3
+Blockout E93D7E11 7393172A
+Block #3
+Blockin EE11C22A 576A3038
+Blockout AE2D8A57 1E03AC9C
+Block #4
+Blockin 76183F99 C0B6DE87
+Blockout 9EB76FAC 45AF8E51
+Plaintext is
+6BC1BEE2 2E409F96 E93D7E11 7393172A
+AE2D8A57 1E03AC9C 9EB76FAC 45AF8E51
+**************************************************************
+##############################################################
+Block Cipher Modes of Operation
+Electronic Codebook (ECB)
+##############################################################
+ECB-TDES (Encryption)
+--------------------------------------------------------------
+Key1 is
+01234567 89ABCDEF
+Key2 is
+23456789 ABCDEF01
+Key3 is
+01234567 89ABCDEF
+Plaintext is
+6BC1BEE2 2E409F96 E93D7E11 7393172A
+AE2D8A57 1E03AC9C 9EB76FAC 45AF8E51
+Block #1
+Blockin 6BC1BEE2 2E409F96
+Blockout 06EDE3D8 2884090A
+Block #2
+Blockin E93D7E11 7393172A
+Blockout FF322C19 F0518486
+Block #3
+Blockin AE2D8A57 1E03AC9C
+Blockout 73057697 2A666E58
+Block #4
+Blockin 9EB76FAC 45AF8E51
+Blockout B6C88CF1 07340D3D
+Ciphertext is
+06EDE3D8 2884090A FF322C19 F0518486
+73057697 2A666E58 B6C88CF1 07340D3D
+==============================================================
+ECB-TDES (Decryption)
+Key1 is
+01234567 89ABCDEF
+Key2 is
+23456789 ABCDEF01
+Key3 is
+01234567 89ABCDEF
+Ciphertext is
+06EDE3D8 2884090A FF322C19 F0518486
+73057697 2A666E58 B6C88CF1 07340D3D
+Block #1
+Blockin 06EDE3D8 2884090A
+Blockout 6BC1BEE2 2E409F96
+Block #2
+Blockin FF322C19 F0518486
+Blockout E93D7E11 7393172A
+Block #3
+Blockin 73057697 2A666E58
+Blockout AE2D8A57 1E03AC9C
+Block #4
+Blockin B6C88CF1 07340D3D
+Blockout 9EB76FAC 45AF8E51
+Plaintext is
+6BC1BEE2 2E409F96 E93D7E11 7393172A
+AE2D8A57 1E03AC9C 9EB76FAC 45AF8E51
+**************************************************************

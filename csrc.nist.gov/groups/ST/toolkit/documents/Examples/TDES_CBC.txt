@@ -1,0 +1,183 @@
+--------------------------------------------------------------
+##############################################################
+Block Cipher Modes of Operation
+Cipher Block Chaining (CBC)
+##############################################################
+CBC-TDES (Encryption)
+Key1 is
+01234567 89ABCDEF
+Key2 is
+23456789 ABCDEF01
+Key3 is
+456789AB CDEF0123
+IV is
+F69F2445 DF4F9B17
+Plaintext is
+6BC1BEE2 2E409F96 E93D7E11 7393172A
+AE2D8A57 1E03AC9C 9EB76FAC 45AF8E51
+Block #1
+Plaintext 6BC1BEE2 2E409F96
+InputBlock 9D5E9AA7 F10F0481
+OutputBlock 2079C3D5 3AA763E1
+Ciphertext 2079C3D5 3AA763E1
+Block #2
+Plaintext E93D7E11 7393172A
+InputBlock C944BDC4 493474CB
+OutputBlock 93B79E25 69AB5262
+Ciphertext 93B79E25 69AB5262
+Block #3
+Plaintext AE2D8A57 1E03AC9C
+InputBlock 3D9A1472 77A8FEFE
+OutputBlock 51657048 1F25B50F
+Ciphertext 51657048 1F25B50F
+Block #4
+Plaintext 9EB76FAC 45AF8E51
+InputBlock CFD21FE4 5A8A3B5E
+OutputBlock 73C0BDA8 5C8E0DA7
+Ciphertext 73C0BDA8 5C8E0DA7
+--------------------------------------------------------------
+Ciphertext is
+2079C3D5 3AA763E1 93B79E25 69AB5262
+51657048 1F25B50F 73C0BDA8 5C8E0DA7
+==============================================================
+CBC-TDES (Decryption)
+Key1 is
+01234567 89ABCDEF
+Key2 is
+23456789 ABCDEF01
+Key3 is
+456789AB CDEF0123
+IV is
+F69F2445 DF4F9B17
+Ciphertext is
+2079C3D5 3AA763E1 93B79E25 69AB5262
+51657048 1F25B50F 73C0BDA8 5C8E0DA7
+Block #1
+Ciphertext 2079C3D5 3AA763E1
+InputBlock 2079C3D5 3AA763E1
+OutputBlock 9D5E9AA7 F10F0481
+Plaintext 6BC1BEE2 2E409F96
+Block #2
+Ciphertext 93B79E25 69AB5262
+InputBlock 93B79E25 69AB5262
+OutputBlock C944BDC4 493474CB
+Plaintext E93D7E11 7393172A
+Block #3
+Ciphertext 51657048 1F25B50F
+InputBlock 51657048 1F25B50F
+OutputBlock 3D9A1472 77A8FEFE
+Plaintext AE2D8A57 1E03AC9C
+Block #4
+Ciphertext 73C0BDA8 5C8E0DA7
+InputBlock 73C0BDA8 5C8E0DA7
+OutputBlock CFD21FE4 5A8A3B5E
+Plaintext 9EB76FAC 45AF8E51
+--------------------------------------------------------------
+Plaintext is
+6BC1BEE2 2E409F96 E93D7E11 7393172A
+AE2D8A57 1E03AC9C 9EB76FAC 45AF8E51
+**************************************************************
+##############################################################
+Block Cipher Modes of Operation
+Cipher Block Chaining (CBC)
+##############################################################
+CBC-TDES (Encryption)
+Key1 is
+01234567 89ABCDEF
+Key2 is
+23456789 ABCDEF01
+Key3 is
+01234567 89ABCDEF
+IV is
+F69F2445 DF4F9B17
+Plaintext is
+6BC1BEE2 2E409F96 E93D7E11 7393172A
+AE2D8A57 1E03AC9C 9EB76FAC 45AF8E51
+Block #1
+Plaintext 6BC1BEE2 2E409F96
+InputBlock 9D5E9AA7 F10F0481
+OutputBlock 7401CE1E AB6D003C
+Ciphertext 7401CE1E AB6D003C
+Block #2
+Plaintext E93D7E11 7393172A
+InputBlock 9D3CB00F D8FE1716
+OutputBlock AFF84BF4 7B36CC21
+Ciphertext AFF84BF4 7B36CC21
+Block #3
+Plaintext AE2D8A57 1E03AC9C
+InputBlock 01D5C1A3 653560BD
+--------------------------------------------------------------
+OutputBlock 54F0238F 9FFECD8F
+
+Ciphertext 54F0238F 9FFECD8F
+
+Block #4
+
+Plaintext 9EB76FAC 45AF8E51
+
+InputBlock CA474C23 DA5143DE
+
+OutputBlock 6ACF1183 92B45581
+
+Ciphertext 6ACF1183 92B45581
+
+Ciphertext is
+7401CE1E AB6D003C AFF84BF4 7B36CC21
+54F0238F 9FFECD8F 6ACF1183 92B45581
+==============================================================
+CBC-TDES (Decryption)
+Key1 is
+01234567 89ABCDEF
+Key2 is
+23456789 ABCDEF01
+Key3 is
+01234567 89ABCDEF
+IV is
+F69F2445 DF4F9B17
+Ciphertext is
+7401CE1E AB6D003C AFF84BF4 7B36CC21
+54F0238F 9FFECD8F 6ACF1183 92B45581
+Block #1
+
+Ciphertext 7401CE1E AB6D003C
+
+InputBlock 7401CE1E AB6D003C
+
+OutputBlock 9D5E9AA7 F10F0481
+
+Plaintext 6BC1BEE2 2E409F96
+
+Block #2
+
+Ciphertext AFF84BF4 7B36CC21
+
+InputBlock AFF84BF4 7B36CC21
+
+OutputBlock 9D3CB00F D8FE1716
+
+Plaintext E93D7E11 7393172A
+
+Block #3
+
+Ciphertext 54F0238F 9FFECD8F
+
+InputBlock 54F0238F 9FFECD8F
+
+OutputBlock 01D5C1A3 653560BD
+
+Plaintext AE2D8A57 1E03AC9C
+
+Block #4
+
+Ciphertext 6ACF1183 92B45581
+
+InputBlock 6ACF1183 92B45581
+
+OutputBlock CA474C23 DA5143DE
+
+Plaintext 9EB76FAC 45AF8E51
+
+Plaintext is
+6BC1BEE2 2E409F96 E93D7E11 7393172A
+AE2D8A57 1E03AC9C 9EB76FAC 45AF8E51
+**************************************************************

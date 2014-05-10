@@ -1,0 +1,25 @@
+##############################################################
+
+ANSI X9.31 Appendix A.2.4
+Key1 =
+75C71AE5 A11A232C
+Key2 =
+40256DCD 94F767B0
+Key3 =
+75C71AE5 A11A232C
+DT =
+C89A1D88 8ED12F3C
+V =
+80000000 00000000
+##############################################################
+Block #1
+Blockin C89A1D88 8ED12F3C
+Blockout 338C3725 87BC4838
+Block #1
+Blockin B38C3725 87BC4838
+Blockout 944DC721 0D6D7FD7
+Block #1
+Blockin A7C1F004 8AD137EF
+Blockout 1C6AA1E8 100D908D
+R is
+944DC721 0D6D7FD7
