@@ -1,0 +1,1317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+
+
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+
+
+<head>
+
+
+
+<title>NIST - Cryptographic Algorithm Validation Program (CAVP)</title>
+
+
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+
+
+
+<meta name="description" content="CAVP: Information on validation testing for FIPS-approved and NIST-recommended cryptographic algorithms and components of algorithms"/>
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="../../../css/style.css" media="screen"/>
+
+
+
+<link rel="stylesheet" type="text/css" href="../../../css/menu.css" media="screen"/>
+
+
+
+<link rel="stylesheet" type="text/css" href="../../../css/print.css" media="print"/>
+
+
+
+<script type="text/javascript" src="../../../js/menu.js"></script>
+
+
+
+<script type="text/javascript" id="_fed_an_js_tag" src="http://www.nist.gov/js/federated-analytics.all.min.js?agency=NIST&subagency=csrc&pua=UA-37115410-16&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/generic-nist-exit-script.css" />
+<script src="/js/jquery-1.7.2.min.js"></script>
+<script src="/js/generic-nist-exit-script.js"></script>
+</head>
+
+
+
+
+<body>
+<div id="page"> 
+  <!-- SSI: BANNER, GLOBAL SEARCH, GLOBAL NAVIGATION MENUS -->
+  <!-- NIST Header and Global Search-->
+<div id="nist-header">
+	<img src="/images/nist_itl_header.jpg" border="0" align="left" usemap="#Map" alt="NIST Logo and ITL Banner" />
+	<map name="Map" id="Map">
+  		<area shape="rect" coords="41,3,125,33" href="http://www.nist.gov/" target="_blank"  title="NIST Homepage" alt="Link to the NIST Homepage" />
+		<area shape="rect" coords="130,18,289,32" href="http://www.nist.gov/itl/" target="_blank" title="ITL Homepage" alt="Link to the ITL Homepage" />
+		<area shape="rect" coords="130,5,389,19" href="http://www.nist.gov/" target="_blank" title="NIST Homepage" alt="Link to the NIST Homepage" />
+	</map>
+	<div id="globalsearch">
+	
+	<form action="http://externalsearch.nist.gov/search" method="GET" name="gs"> Search CSRC: 
+		<input type="text" name="q" size="22" maxlength="256">
+		<input value="GO" name="btnG" type="submit" class="button"> 
+		<input value="itl_csrc_collection" name="site" type="hidden"> 
+		<input value="xml_no_dtd" name="output" type="hidden"> 
+		<input value="default_frontend" name="client" type="hidden"> 
+		<input value="date:D:L:d1" name="sort" type="hidden"> 
+		<input value="default_frontend" name="proxystylesheet" type="hidden"> 
+		<input value="UTF-8" name="oe" type="hidden"> 
+	</form>
+	
+	</div>
+</div>
+
+<!-- GLOBAL BANNER AND NAVIGATION MENUs -->
+<div id="header">
+	<h2 id="hidden">NIST, Computer Security Division, Computer Security Resource Center</h2>
+
+<!-- TOP MENU (GENERAL LINKS) -->
+	<ul id="global">
+<!--		<li><a href="/about/" title="About CSD">about</a></li>
+		<li><a href="/mission/" title="CSD Mission">mission</a></li>
+-->		<li><a href="/contact/" title="Contact CSD">contact</a></li>
+<!--		<li><a href="/staff/" title="CSD Staff">staff</a></li>
+-->		<li><a href="/sitemap.html" title="Site Map">site map</a></li>
+	</ul>
+
+<!-- MAIN MENU (MAIN LINKS) -->
+	<div id="mainmenu">
+		<ul id="nav">
+			<li><a href="/" title="HOME">CSRC Home</a></li>
+
+			<li><a href="/about/" title="About CSD">About CSD</a>
+<!--				<ul>
+					<li class="dropdown"><a href="/groups/ct.html" title="Cryptographic Technology Group">Cryptographic Technology</a></li>
+					<li class="dropdown"><a href="/groups/ssa.html" title="Secure Systems and Applications Group">Secure Systems and Applications</a></li>
+					<li class="dropdown"><a href="/groups/scm.html" title="Security Components and Mechanisms Group">Security Components and Mechanisms</a></li>					
+					<li class="dropdown"><a href="/groups/soi.html" title="Security Outreach and Integration Group">Security Outreach and Integration</a></li>
+					<li class="dropdown"><a href="/groups/stvm.html" title="Security Testing, Validation, and Measurement Group">Security Testing, Validation, and Measurement</a></li>
+				</ul> 
+-->			</li>
+			<li>
+			<a href="/projects/" title="CSD Activities: Programs, Projects and Research">Projects / Research</a>
+				<ul>
+					<li class="dropdown"><a href="/projects/crypto.html" title="Cryptographic Technology">Cryptographic Technology</a></li>
+					<li class="dropdown"><a href="/projects/outreach.html" title="Cybersecurity Awareness, Training, Education and Outreach">Education &amp; Outreach</a></li>
+					<li class="dropdown"><a href="/projects/cybersec_fisma.html" title="FISMA and Cybersecurity Initiatives">FISMA &amp; Cybersecurity Initiatives</a></li>
+					<li class="dropdown"><a href="/projects/iden_ac.html" title="Identity Management and Access Control">Identity Management &amp;<br/>Access Control</a></li>
+					<li class="dropdown"><a href="/projects/secauto.html" title="Security Automation and Vulnerability Management">Security Automation &amp;<br/>Vulnerability Management</a></li>
+					<li class="dropdown"><a href="/projects/sys_emerg.html" title="Systems and Emerging Technologies Security Research">Systems &amp; Emerging Technologies</a></li>
+					<li class="dropdown"><a href="/projects/val_test.html" title="Validation Programs and Advanced Testing">Validation Programs &amp;<br/>Testing</a></li>
+					<li class="dropdown"><a href="/projects/a_to_z.html" title="A to Z List of CSD Programs, Projects and Research">A-Z List of Projects</a></li><li class="dropdown"><a href="/projects/past_proj.html" title="Computer Security Division's Past Projects">Past Projects</a></li>
+				
+				</ul>
+			</li>
+			<li><a href="/publications/" title="CSD Publications">publications</a>
+				<ul>
+					<li class="dropdown"><a href="/publications/PubsDrafts.html" title="Draft Publications">Draft Publications</a></li>
+					<li class="dropdown"><a href="/publications/PubsFIPS.html" title="FIPS Publications">FIPS Publications</a></li>
+					<li class="dropdown"><a href="/publications/PubsSPs.html" title="NIST Special Publications">NIST Special Publications (SPs)</a></li>
+					<li class="dropdown"><a href="/publications/PubsNISTIRs.html" title="NIST Interagency and Internal Reports">NISTIRs</a></li>
+					<li class="dropdown"><a href="/publications/PubsITLSB.html" title="ITL Security Bulletins">ITL Bulletins</a></li>
+					<li class="dropdown"><a href="/publications/PubsTC.html" title="Browse by Topic/Project">By Topic/Project</a></li>
+					<li class="dropdown"><a href="/publications/PubsFL.html" title="Browse by Security Control Family">By Security Control Family</a></li>
+					<li class="dropdown"><a href="/publications/PubsByLR.html" title="Browse by Legal Requirement">By Legal Requirement</a></li>
+					
+					<li class="dropdown"><a href="/publications/articles/" title="Journals Articles, Conference Papers, Books, Book Chapters and Other Papers">Journal Articles and Other Papers</a></li>
+					
+					<li class="dropdown"><a href="/publications/history/" title="Early Computer Security Papers (1970-1985)">Early Computer Security Papers (1970-1985)</a></li>
+					<li class="dropdown"><a href="/publications/secpubs/" title="Other Historical Computer Security Papers">Other Historical Papers</a></li>
+				</ul>
+			</li>
+
+<!--			<li><a href="/drivers/" title="Drivers">drivers</a>
+			    <ul>
+				   <li class="dropdown"><a href="/fedreg/" title="Computer Security Division Federal Register Notices">Federal Register Notices</a></li>
+				</ul>
+			</li>
+-->
+			<li><a href="/news_events/" title="News &amp; Events">news & events</a>
+				<ul>
+					<li class="dropdown"><a href="/fedreg/" title="Computer Security Division Federal Register Notices">Federal Register Notices</a></li>
+					<li class="dropdown"><a href="/fedreg/archive-fedreg.html" title="Federal Register Notices Archives">Federal Register Notices Archives</a></li>
+					<li class="dropdown"><a href="/news_events/" title="News">News</a></li>
+					<li class="dropdown"><a href="/news_events/news_archive/" title="News Archive">News Archive</a></li>
+					<li class="dropdown"><a href="/news_events/events.html" title="Events">Events</a></li>
+					<li class="dropdown"><a href="/news_events/events_archive/" title="Events Archive">Events Archive</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
+  <div id="container" class="clearfix"> 
+    <div id="leftcol"> 
+      <div class="padding10two"> 
+        <div class="bluebox"> 
+          <ul id="submenu">
+            <li><a href="index.html" title="CAVP: Cryptographic Algorithm Validation Program" class="current">CAVP: Cryptographic Algorithm<br />Validation Program</a>
+            <ul>
+            	<li><a href="#testspecs" title="CAVP Testing Specifications">CAVP Testing Specifications</a>
+                <ul>
+                  <li><a href="#01" title="Symmetric Key">Symmetric Key:<br/><i>-AES, TDES</i></a></li>
+                  <li><a href="#08" title="Additional Modes of Operation">Additional Modes of Operation:<br/><i>-XTS-AES</i></a></li>
+                  <li><a href="#02" title="Asymmetric Key">Asymmetric Key:<br/>
+                    <i>-DSA, ECDSA, RSA (FIPS 186-2 / FIPS 186-4)</i></a></li>
+                  <li><a href="#03" title="SHS">SHS</a></li>
+                  <li><a href="#04" title="RNG">RNG</a></li>
+                  <li><a href="#05" title="DRBG">DRBG</a></li>
+                  <li><a href="#06" title="KAS">Key Management:<br/>
+                  <i>-Key Agreement Schemes (KAS) and Key Confirmation Algorithms</i></a></li>
+                  <li><a href="#07" title="MAC">MAC:<br/><i>-CMAC, CCM, GCM/GMAC, HMAC</i><em>, Key Wrap (KW, KWP, and TKW)</em></a></li>
+                  <li><a href="#10" title="KDF">KDF:<br/><i>-KBKDF (SP 800-108)</i></a></li>
+                  <li><a href="#09" title="Component">Component Testing:<br/>
+                  <i>-KDFs (SP 800-135);<br/>
+                  -ECCCDH Primitive (SP 800-56A);<br/>
+                  -ECDSA Signature Generation Primitive (FIPS 186-4);<br/>
+                  -RSA PKCS 1.5 and PKCS PSS Signature Generation Primitives (FIPS 186-4);<br/>
+                  -RSADP Decryption Operation Primitive</i></a></li>
+                </ul>
+                </li>
+            </ul>
+            </li>
+            <li><a href="announcements.html" title="Announcements">Announcements</a></li>
+            <li><a href="notices.html" title="Notices">Notices</a></li>
+            <li><a href="standards.html" title="Standards" >Standards</a> 
+            <li><a href="validation.html" title="Validation Lists">Validation 
+              Lists</a></li>
+            <li><a href="contacts.html" title="Contacts">Contacts</a></li>
+            <li><a href="faqs.html" title="CAVP Management Manual and FAQ">CAVP Management Manual and FAQ</a></li>
+          </ul>
+        </div>
+        <div class="bluebox"> 
+          <div class="bluebox"> 
+            <h1>CAVP Announcements</h1>
+            <ul>
+<li><a href="announcements.html" >[07-10-14]</a> -- New guidance on the testing available for FIPS 186-4 RSA Key Generation.   
+              For more information, please go to the Announcements page.</li>
+<li><a href="announcements.html" >[06-19-14]</a> -- New release of the CAVS algorithm validation testing tool to the CST Laboratories CAVS17.0. This version of the CAVS tool adds validation testing for SP800-38F Key Wrap and several minor updates. 
+              For more information, please go to the Announcements page.</li>
+<li><a href="announcements.html" >[04-23-14]</a> -- New release of the CAVS algorithm validation testing tool to the CST Laboratories CAVS16.3. This version of the CAVS tool address several minor updates. 
+              For more information, please go to the Announcements page.</li>
+              <li><a href="announcements.html" >[04-10-14]</a> -- Updated the CAVP FAQ document.</li>
+              <li><a href="announcements.html" >[04-01-14]</a> -- New release of the CAVS algorithm validation testing tool to the CST Laboratories CAVS16.2. This version of the CAVS tool address several minor updates. 
+              For more information, please go to the Announcements page.</li>
+              <li><a href="announcements.html" >[03-18-14]</a> -- New release of the CAVS algorithm validation testing tool to the CST Laboratories CAVS16.1. This version of the CAVS tool address several minor updates. 
+              For more information, please go to the Announcements page.</li>
+              <li><a href="announcements.html" >[12-12-13]</a> -- New release of the CAVS algorithm validation testing tool to the CST Laboratories CAVS16.0. This version of the CAVS tool contains changes to the testable functions in some of the approved cryptographic algorithms to reflect the transition to the use of stronger cryptographic keys and more robust algorithms (as recommended in NIST SP800-131A Transitions:  Recommendation for Transitioning the Use of Cryptographic Algorithms and Key Lengths) effective January 1, 2014.
+            For more information, please go to the Announcements page.</li>
+ 		        <a href="announcements.html" title="see more announcements" class="graphic2">more 
+              announcements</a>
+            </ul>
+          </div>
+        </div>
+        <div class="bluebox"> 
+          <div class="bluebox"> 
+            <h1>CAVP Notices</h1>
+            <ul>
+             <li><a href="notices.html">[12-12-13]</a> - The transitioning of cryptographic algorithms and key lengths to stronger cryptographic keys and more robust algorithms as recommended in NIST SP800-131A <em>Transitions: Recommendation for Transitioning the Use of Cryptographic Algorithms and Key Lengths </em> goes into effect January 1, 2014. Please see NIST SP800-131A, CMVP Implementation Guidance (IG) G.14 Validation of Transitioning Cryptographic Algorithms and Key Lengths, and IG G.15 Validating the Transition from FIPS 186-2 to FIPS 186-3 for details on the changes that take effect on January 1, 2014.<p></p>
+              <li><a href="notices.html">[09-05-13]</a> -- On July 19,2013, NIST announced the approval of Federal   Information Processing Standard (FIPS) 186-4, the Digital Signature Standard.    All of the changes between FIPS 186-3 and FIPS186-4 had already been   incorporated into the CAVP testing tool; the testing of FIPS186-3   implementations is identical to the testing of FIPS 186-4 implementations. There   is no need for a transition period in which both FIPS 186-3 and FIPS 186-4   validation would be performed. Previous CAVP validations for FIPS 186-3 will be   considered as equivalent to those for FIPS 186-4. Vendors should start using   FIPS 186-4 immediately.
+                <p></p>
+                <a href="notices.html" title="see more notices" class="graphic2">more 
+              notices</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="rightcol"> 
+      <div id="breadcrumb"> 
+        <ul>
+          <li><a href="../../../index.html">CSRC Home</a> > </li>
+          <li><a href="../../index.html">Groups</a> > </li>
+          <li><a href="../index.html">STM</a> > </li>
+          <li>CAVP</li>
+        </ul>
+      </div>
+      <div class="padding10"> 
+        
+        <h1>Cryptographic Algorithm Validation Program (CAVP)</h1>
+        
+        <p>The <strong>Cryptographic Algorithm Validation Program (CAVP)</strong> 
+          encompasses validation testing for FIPS approved and NIST recommended 
+          cryptographic algorithms and components of algorithms. Cryptographic 
+          algorithm validation is a prerequisite to the Cryptographic Module Validation 
+          Program (CMVP). The CAVP was established by NIST and the Communications 
+          Security Establishment (CSE) in July 1995. All of the tests 
+          under the CAVP are handled by third-party laboratories that are accredited 
+          as Cryptographic and Security Testing (CST) Laboratories by the National 
+          Voluntary Laboratory Accreditation Program (NVLAP). Vendors interested 
+          in validation testing of their algorithm implementation may select any 
+          of the accredited laboratories.</p>
+        
+        <h1>Cryptographic Algorithm Validation Testing Specifications</h1>
+        <p>Below are the algorithms for which the CAVP currently has validation testing. 
+        Each section consists of links to the cryptographic algorithm standard, 
+        the algorithm validation test suite specifications (the Validation System 
+        document), the algorithm validation list, and the test vectors to informally 
+        verify the correctness of an algorithm implementation. <BR>
+        
+        <a name="01" id="01"></a> <h2 class="top">Symmetric Key</h2>
+        
+        <h3>Advanced Encryption Standard (AES), Triple-DES, and Skipjack Algorithms</h3>
+        
+        <p>Currently, there exist three FIPS-approved symmetric key algorithms 
+          for encryption: Advanced Encryption Standard (<strong>AES</strong>), 
+          <strong>Triple-DES</strong>, and <strong>Skipjack</strong>. <em>AES 
+          is the FIPS-Approved symmetric encryption algorithm of choice</em>.</p>
+        
+        <ul class="bullets1">
+          <li> <a href="../../../publications/fips/fips197/fips-197.pdf" target="_blank" class="pdf">FIPS 
+            197</a>, <em>Advanced Encryption Standard (AES)</em>, specifies the 
+            AES algorithm. </li>
+          
+          <li> <em>Recommendation for the Triple Data Encryption Algorithm (TDEA) 
+            Block Cipher</em>, NIST <a href="../../../publications/nistpubs/800-67-Rev1/SP-800-67-Rev1.pdf" target="_blank" class="pdf">Special Publication 800-67</a>, January 2012. </li>
+          
+          <li> <em>Recommendation for Block Cipher Modes of Operation, Methods and Techniques</em>, <a href="../../../publications/nistpubs/800-38a/sp800-38a.pdf" target="_blank" class="pdf">Special 
+            Publication 800-38A</a>, December 2001. Appendix E references Modes of Triple-DES. </li>
+          
+          <li> <em>Triple Data Encryption Algorithm Modes of Operation</em>, ANSI X9.52-1998. <strong>Copies of X9.52-1998 may be obtained from <a href="http://www.x9.org/" target="_top">X9</a></strong>, 
+            a standards committee for the financial services industry. NIST does 
+            <strong>NOT</strong> have copies of the standard available for distribution. </li>
+          
+          <li> The <a href="documents/skipjack/skipjack.pdf" target="_blank" class="pdf">Skipjack 
+            algorithm</a> is referenced in <a href="../../../publications/fips/fips185/fips185.txt" target="_blank" class="txt">FIPS 185</a>, <em>Escrowed Encryption Standard (EES)</em>, and a complete 
+            specification is available in <em><a href="documents/skipjack/skipjack.pdf" target="_blank" class="pdf">SKIPJACK 
+            and KEA Algorithm Specifications</a> (Version 2.0, 29 May 1998)</em>. </li>
+        </ul>
+        
+        <h4>Testing Requirements:</h4>
+        
+        <p>Validation testing for AES, Triple-DES, and Skipjack algorithms are handled 
+        by the Cryptographic Algorithm Validation Program's (<a href="../cavp/index.html">CAVP</a>) 
+        <a href="../testing_labs/index.html">CST labs</a>.</p>
+         
+        <ul class="bullets1">
+          <li> AES tests are described in <a href="documents/aes/AESAVS.pdf" target="_blank" class="pdf">The 
+            Advanced Encryption Standard Algorithm Validation Suite (AESAVS)</a>. </li>
+          
+          <li> Triple-DES tests are described in NIST Special Publication <a href="../../../publications/nistpubs/800-20/800-20.pdf" target="_blank" class="pdf">800-20</a>, 
+            <em>Modes of Operation Validation System for the Triple Data Encryption 
+            Algorithm (TMOVS): Requirements and Procedures</em>. An additional 
+            test, the <a href="documents/des/DESMMT.pdf" class="pdf">Multi-block Message Text 
+            (MMT)</a>, is also required. </li>
+            
+          <li> <strong>Additional testing note:</strong> The AES and TDES Counter 
+            Mode requires additional prerequisite testing of the underlying symmetric 
+            algorithm using any mode of operation that utilizes the forward cipher function. </li>
+            
+          <li> Skipjack tests:  As of January 2011, the CAVP only validates Skipjack decryption implementations.
+	      Please see <a href="../../../publications/nistpubs/800-131A/sp800-131A.pdf" target="_blank" class="pdf">SP800-131A Transitions: Recommendation for Transitioning the Use of Cryptographic Algorithms and Key Lengths</a> for more information.
+	     <br />&nbsp;<br />
+         The Skipjack tests for the decrypt state are described in NIST Special Publication <a href="../../../publications/nistpubs/800-17/800-17.pdf" target="_blank" class="pdf">800-17</a>, <em>Modes of Operation Validation System (MOVS): Requirements and Procedures</em>. The validation test suite for Skipjack implementations using the decrypt state consists 
+            of the Modes test for the Decryption Process, the Variable Ciphertext Known Answer Test and the Variable Key Known Answer Test for the Decryption Process.  Based on the Skipjack modes of operation implemented, SP800-17 Section 5 
+	    indicates the tests required to validate an implementation of the Skipjack Algorithm.
+       <br />&nbsp;<br />  
+	   (NIST Special Publication 800-17 erroneously states the Initial Permutation 
+            KAT for the Decryption Process is also required for Skipjack validation. 
+            This is not true.) </li>
+        </ul>
+        
+        <h4>Validation List:</h4>
+        
+        <p>NIST maintains validation lists for <a href="documents/aes/aesval.html" target="_blank">AES</a>, 
+        <a href="documents/des/tripledesval.html" target="_blank">Triple-DES</a>, 
+        and <a href="documents/des/skipval.htm" target="_blank">Skipjack</a>. These lists identify 
+        the algorithm implementations which have been tested as correctly implementing 
+        the AES, Triple-DES, and Skipjack algorithms. Points of contact and implementation 
+        descriptions are also included. </p> 
+        
+        <h4>Test Vectors:</h4>
+        <p>The following files provide electronic versions of the vectors for 
+          the Known Answer Test (KAT), and sample values for the Monte Carlo(MCT) 
+          test, and the Multiblock Message (MMT) test. These values are properly 
+          formatted in response (.rsp) files. Vendor response files should match 
+          this format exactly. </p>
+        
+        <p>In addition, a file with intermediate results (.txt) for the Monte 
+          Carlo test is supplied. The Monte Carlo tests consist of 400 cases. 
+          For each case, initial values are provided, and 10,000 iterations of 
+          the desired mode of operation are run. The output of each iteration 
+          is used as input to the next iteration. To aid debugging, we provide 
+          the output for each of the first five (5) iterations of the 10,000 as 
+          well as the final (10,000th) output. The intermediate values are indented 
+          by one tab and clearly identified by use of the word &quot;Intermediate&quot;.</p>
+        
+        <p>These vectors can be used to informally verify the correctness of an 
+          AES and/or TDES algorithm implementation. The validation system documents 
+          (see above) describe the details of the tests. </p>
+        
+        <p><strong>NOTE, use of these vectors does not take the place of validation obtained through the Cryptographic Algorithm Validation Program (CAVP).</strong> </p>
+        
+        <ul class="bullets1">
+           <li> Test Vectors for AES: 
+               <ul>
+                  <li> <a href="documents/aes/KAT_AES.zip" target="_blank" class="zip">AES Known Answer Test (KAT) Vectors</a> </li>
+                  <li> <a href="documents/aes/aesmct.zip" target="_blank" class="zip">AES Monte Carlo Test (MCT) Sample Vectors</a> </li>
+                  <li> <a href="documents/aes/aesmct_intermediate.zip" target="_blank" class="zip">AES Monte Carlo Test (MCT) Intermediate Values</a> </li>
+                  <li> <a href="documents/aes/aesmmt.zip" target="_blank" class="zip">AES Multiblock Message Test (MMT) Sample Vectors</a> </li>
+                  </ul>
+               </li>
+               <li> Test Vectors for TDES: 
+                  <ul>
+                  <li> <a href="documents/des/KAT_TDES.zip" target="_blank" class="zip">Triple DES Known Answer Test (KAT) Vectors</a> </li>
+                  <li> <a href="documents/des/tdesmct.zip" target="_blank" class="zip">Triple-DES Monte Carlo Test (MCT) Sample Vectors</a> </li>
+                  <li> <a href="documents/des/tdesmct_intermediate.zip" target="_blank" class="zip">Triple-DES Monte Carlo Test (MCT) Intermediate Values</a> </li>
+                  <li> <a href="documents/des/tdesmmt.zip" target="_blank" class="zip">Triple-DES Multiblock Message Test (MMT) Sample Vectors</a> </li>
+                  </ul>
+               </li>
+               </ul>
+        
+        <p><br /><a href="#top" class="topLink">Back to Top</a> </p>
+        
+        <p><a name="08" id="08"></a> </p>
+        <h2>Additional Modes of Operation for Symmetric Algorithms</h2>
+        
+        <h3>XTS-AES</h3>
+        <p>Currently, there exist multiple modes of operation that are described 
+          in the NIST Special Publication 800-38 series. Most of these modes of 
+          operation are message authentication codes and therefore have been listed 
+          under the MAC section. XTS-AES is more like the original modes of operation 
+          and therefore is described below.</p>
+        
+        <ul class="bullets1">
+          <li> <a href="../../../publications/nistpubs/800-38E/nist-sp-800-38E.pdf" target="_blank" class="pdf">NIST 
+            SP 800-38E</a>, <em>Recommendation for Block Cipher Modes of Operation: 
+            The XTS-AES Mode for Confidentiality on Block-Oriented Storage Devices</em>, specifies the XTS-AES algorithm. </li>
+        </ul>
+        
+        <h4>Testing Requirements:</h4>
+        <p>Validation testing for XTS-AES mode of operation algorithm is handled 
+        by the Cryptographic Algorithm Validation Program's (<a href="../cavp/index.html">CAVP</a>) 
+        <a href="../testing_labs/index.html">CST labs</a>.</p> 
+        
+        <ul class="bullets1">
+          <li> XTS-AES tests are described in <a href="documents/aes/XTSVS.pdf" target="_blank" class="pdf">The 
+            XTS-AES Validation System (XTSVS)</a>. </li>
+        </ul>
+        
+        <h4>Validation List:</h4>
+        <p>NIST maintains the current XTS-AES Validations. XTS-AES validations are 
+        included on the <a href="documents/aes/aesval.html" target="_blank">AES 
+        Validation List</a>. </p>
+        
+        <h4>Other Information:</h4>
+        <ul class="bullets1">
+          <li> <a href="documents/aes/XTSTestVectors.zip" target="_blank" class="zip">XTS-AES 
+            Test Vectors</a> - This file provides an electronic version of the 
+            test vectors that can be used to informally verify the correctness 
+            of an XTS-AES algorithm implementation, using the validation tests 
+            described in <a href="documents/aes/XTSVS.pdf" target="_blank" class="pdf">The 
+            XTS-AES Validation System (XTSVS)</a>. <strong>However, use of 
+            these vectors does not take the place of validation obtained through 
+            the Cryptographic Algorithm Validation Program (CAVP). </strong></li>
+        </ul>
+        
+        <br /><a href="#top" class="topLink">Back to Top</a> 
+        
+        
+        <p><a name="02" id="02"></a></p><h2>Asymmetric Key</h2>
+        
+      
+        <h3>FIPS 186-4 Digital Signature Standard (DSS) (DSA, RSA, and ECDSA algorithms)</h3>
+ 
+ 		<p>On July 19, 2013, NIST announced the approval of Federal  Information Processing Standard (FIPS) 186-4, the Digital Signature Standard.&nbsp; All of the changes between FIPS 186-3 and  FIPS186-4 had already been incorporated into the CAVP testing tool; the testing  of FIPS186-3 implementations is identical to the testing of FIPS 186-4  implementations. There is no need for a transition period in which both FIPS  186-3 and FIPS 186-4 validation would be performed. Previous CAVP validations  for FIPS 186-3 will be considered as equivalent to those for FIPS 186-4.  Vendors should start using FIPS 186-4 immediately.        </p>
+ 		<p>The FIPS specifies three techniques for the 
+          generation and verification of digital signatures: </p>
+          
+        <ul class="bullets1">
+          <li> <strong>Digital Signature Algorithm (DSA),</strong> </li>
+          <li> <strong>RSA (as specified in ANSI X9.31 (RSA)), </strong>and </li>
+          <li> <strong>Elliptic Curve DSA (ECDSA; as specified in ANSI X9.62).</strong> </li>
+        </ul>
+        
+        <p>FIPS 186-4 allows the use of any random number generator (RNG) or random 
+          bit generator (RBG) that is approved for use in FIPS 140-validated modules, 
+          subject to the transition schedule specified in SP 800-131A. Specific 
+          references to SP 800-90 should not be considered as a requirement to 
+          use a generator specified in SP 800-90 until such time as the use of 
+          the other generators is no longer allowed.</p>
+        
+        <p>Copies of the <strong>ANSI X9.31</strong> and <strong>ANSI X9.62</strong> 
+          standards are available from <a href="http://www.x9.org/" target="_top">X9</a>, a standards committee accredited by the American National Standards Institute (ANSI). NIST 
+          does NOT have copies of these standards available for distribution.
+          
+        <p>All three digital signature techniques in FIPS 186-4 make use of the 
+          Secure Hash Algorithms specified in FIPS 180-4 dated March 2012, <em>Secure 
+          Hash Standard (SHS)</em> accessible via the hashing section of this 
+          webpage.</p>
+          
+        <p>FIPS 186-2 and FIPS 186-4 are currently the <em>only</em> FIPS standards 
+          that contain Approved methods for digital signatures.</p>
+        
+        <h4>Testing Requirements:</h4>
+        <p><a href="../testing_labs/index.html">CST labs</a> can test for conformance 
+        to the algorithm specifications in FIPS 186-4 for the DSA, ECDSA, and 
+        RSA algorithms. </p>
+        
+        <p>The algorithm validation testing requirements for FIPS 186-4 DSA are 
+          specified in:</p>
+        
+        <p><a href="documents/dss2/dsa2vs.pdf" target="_blank" class="pdf"><strong>Digital 
+          Signature Algorithm Validation System (DSA2VS)</strong></a><br/>
+          <strong>Additional testing note:</strong> For the Domain Parameter Generation 
+          and Verification, and the Signature Generation and Verification functions, 
+          the underlying SHA algorithm must be validated as part of the DSA validation. 
+          In addition, Signature Generation and Key Pair Generation require the 
+          RNG/DRBG algorithm to be validated as well.</p>
+          
+        <p>The algorithm validation testing requirements for FIPS 186-4 ECDSA 
+          are specified in:</p>
+        
+        <p><a href="documents/dss2/ecdsa2vs.pdf" target="_blank" class="pdf"><strong>Elliptic 
+          Curve Digital Signature Algorithm Validation System (ECDSA2VS)</strong></a><br/>
+          <strong>Additional testing note:</strong> As part of the ECDSA validation, 
+          additional algorithms implemented by the ECDSA algorithm must be validated. 
+          For the Key Pair Generation function, this includes the underlying RNG/ 
+          DRBG algorithm. For the Signature Generation function, the underlying 
+          SHA and the RNG/DRBG algorithms must be validated. For the Signature 
+          Verification function, the underlying SHA algorithm must be validated.</p>
+        
+        <p>The algorithm validation testing requirements for FIPS 186-4 RSA are 
+          specified in:</p>
+        
+        <p><a href="documents/dss2/rsa2vs.pdf" target="_blank" class="pdf"><strong>RSA 
+          Validation System (RSA2VS)</strong></a><br/>
+          <strong>Additional testing note:</strong> The underlying SHA algorithm 
+          must be validated as part of the  RSA validation for all functions 
+          - Key Generation, Signature Generation, and Signature Verification.. 
+          In addition, Key Generation requires the RNG/DRBG algorithm to be validated 
+          as well.</p>
+        
+        
+        <h3 style="border-top: 1px solid #E1E1E1;
+	padding-top: 10px;">FIPS 186-2 Digital Signature Standard (DSS) (DSA, RSA, and ECDSA algorithms)</h3>
+        
+        <p>On February 15, 2000, NIST <a href="documents/dss/fr000215.html" target="_blank">announced</a> 
+          the approval of <a href="../../../publications/PubsFIPSArch.html" target="_blank"><em>FIPS 
+          186-2 with Change Notice 1 dated October 5, 2001</em></a>, <em>Digital 
+          Signature Standard (DSS)</em>, which supersedes FIPS 186-1. This standard 
+          specifies three FIPS-approved algorithms for generating and verifying 
+          digital signatures:</p>
+        
+        <ul class="bullets1">
+          <li> <strong>Digital Signature Algorithm (DSA),</strong> </li>
+          <li> <strong>RSA (as specified in ANSI X9.31), and</strong> </li>
+          <li> <strong>Elliptic Curve DSA (ECDSA; as specified in ANSI X9.62).</strong> </li>
+        </ul>
+        
+        <p>New items in the DSS include:</p>
+        
+        <ul class="bullets1">
+          <li> the approval of Elliptic Curve DSA (ECDSA) as specified in ANSI X9.62, </li>
+          <li> a list of recommended elliptic curves for Federal Government use 
+            (see Appendix 6 of <a href="../../../publications/PubsFIPSArch.html" target="_blank"><em>FIPS 
+            186-2 with Change Notice 1 dated October 5, 2001</em></a>), and </li>
+          <li> an <a href="documents/dss/fr000215.html#PKCS1" target="_blank">allowance 
+            for the continued acquisition of implementations of PKCS#1 for a transition 
+            period of eighteen (18) months</a>. </li>
+        </ul>
+        
+        <p>Copies of the <strong>ANSI X9.31</strong> and <strong>ANSI X9.62</strong> 
+          standards are available from <a href="http://www.x9.org/" target="_top">X9</a>, a standards committee accredited by the American National Standards Institute (ANSI). NIST 
+          does NOT have copies of these standards available for distribution.</p>
+        
+        <p>All three digital signature techniques in FIPS 186-2 (with Change Notice 
+          1 dated October 5, 2001) make use of the Secure Hash Algorithms specified 
+          in FIPS 180-3 dated October 2008, <em>Secure Hash Standard (SHS)</em> 
+          accessible via the hashing section of this webpage.</p>
+        
+        <p>DSA, RSA, and ECDSA are currently the <em>only</em> FIPS-approved methods 
+          for digital signatures.</p>
+        
+        <h4>Testing Requirements:</h4>
+        <p><a href="../testing_labs/index.html">CST labs</a> can test for conformance 
+        to the algorithm specifications in FIPS 186-2 (with Change Notice 1 dated 
+        October 5, 2001). Algorithm specifications included in this standard are 
+        the DSA, the RSA and the ECDSA algorithms. In addition, NIST can test 
+        for conformance to two other versions of the RSA algorithm specified in 
+        <em>PKCS#1 v2.1: RSA Cryptography Standard, RSA Laboratories, June 2002</em>.</p> 
+        
+        <p>The testing requirements are specified in:</p>
+        
+        <p><a href="documents/dss/DSAVS.pdf" target="_blank" class="pdf"><strong>Digital Signature 
+          Algorithm Validation System (DSAVS)</strong></a><br/>
+          <strong>Additional testing note:</strong> For the Domain Parameter Generation 
+          and Verification, and the Signature Generation and Verification functions, 
+          the underlying SHA-1 algorithm must be validated as part of the DSA 
+          validation.</p>
+        
+        <p><a href="documents/dss/RSAVS.pdf" target="_blank" class="pdf"><strong>RSA Validation 
+          System (RSAVS)</strong></a><br/>
+          <strong>Beginning September 28, 2006:</strong> Validation testing for 
+          RSA algorithm implementations of the RSASSA-PKCS1-v1_5, as specified 
+          in <em>Public Key Cryptography Standards (PKCS) #1 v2.1: RSA Cryptography 
+          Standard-2002</em>, and the RSA X9.31 algorithms include additional 
+          testing to assure the encoded message EM and the intermediate integer 
+          IR are in the correct formats. This testing verifies that an implementation 
+          under test (IUT) does not contain a potential implementation design 
+          that could introduce a vulnerability in these algorithms. This testing 
+          has been added to the Signature Verification validation test described 
+          in the RSAVS document. No modification to this document was necessary 
+          to add this feature. Below in the Test Vectors section, there are test 
+          vectors available to informally test if this vulnerability exists in 
+          an implementation.</p>
+          
+        <p>For all validated cryptographic modules that incorporate RSA, the CAVP 
+          and CMVP strongly suggest re-testing of the RSA algorithmic implementations 
+          to determine if the vulnerability is present.</p>
+        
+        <p>If new CAVP testing is performed and the vulnerability is determined 
+          not to be present, the CSTL can submit the new test results to the CAVP 
+          along with a letter indicating that the implementation passed the RSA 
+          testing in CAVS5.2 and the vulnerability is not present. The letter 
+          should request that a new algorithm certificate be printed to replace 
+          the already issued certificate referencing the new version of CAVS. 
+          Please indicate the already issued certificate number. This letter should 
+          be included in the zip file along with the other files. Note that the 
+          certificate number will not change. Only the reference to the version 
+          of the CAVS tool and the signatory date will be changed. (Note the validation 
+          request will be submitted using already established procedures.)</p>
+        
+        <p>If CAVP testing is performed and the vulnerability is discovered, the 
+          following revalidation process shall be followed:</p>
+        
+        <ul class="bullets1">
+          <li> The algorithm implementation is changed to remove the vulnerability 
+            resulting in a different version number, </li>
+          <li> Submit the new test results to the CAVP for the new version of the 
+            implementation. A new algorithm certificate will be issued for the 
+            new version of the implementation. The certificate will reference 
+            CAVS5.2. </li>
+        </ul>
+        
+        <p><strong>Additional testing note:</strong> For the RSA functions, all 
+          underlying SHA algorithm(s) supported by the RSA implementation must 
+          be validated as part of the RSA validation.</p>
+        
+        <p><a href="documents/dss/ECDSAVS.pdf" target="_blank" class="pdf"><strong>Elliptic 
+          Curve Digital Signature Algorithm (ECDSA) Validation System (ECDSAVS)</strong></a><br/>
+          <strong>Additional testing note:</strong> For the Signature Generation 
+          and Verification functions, the underlying SHA-1 algorithm must be validated 
+          as part of the ECDSA validation.</p>
+        
+        <h4>Validation Listings:</h4>
+        <p>NIST maintains the current DSA, ECDSA, and RSA Validation Lists.</p> 
+        
+        <ul class="bullets1">
+          <li> <a href="../cavp/documents/dss/dsanewval.htm" target="_blank">DSA Validation 
+            List</a> </li>
+          <li> <a href="../cavp/documents/dss/rsanewval.html" target="_blank">RSA 
+            Validation List</a> </li>
+          <li> <a href="../cavp/documents/dss/ecdsanewval.html" target="_blank">ECDSA 
+            Validation List</a> </li>
+        </ul>
+        
+        <h4>Test Vectors:</h4>
+        <p>The following files provide an electronic version of the test vectors 
+          that can be used to informally verify the correctness of the FIPS 186-2 
+          and FIPS 186-4 algorithm implementation using the associated validation 
+          system document (DSAVS, ECDSAVS, or RSAVS, DSA2VS, ECDSA2VS, or 186-4RSAVS). 
+          These values are properly formatted in response (.rsp) files. Vendor 
+          response files should match this format exactly. </p>
+        
+        <p>If applicable, files with intermediate results (.txt) are supplied 
+          for the tests to aid in debugging. Please refer to the readme.txt file 
+          located in the zip files below for detailed explanations.</p>
+        
+        <p><strong>Use of these vectors does not take the place of validation 
+          obtained through the Cryptographic Algorithm Validation Program (CAVP).</strong> </p>
+        
+        <ul class="bullets1">
+          <li> <a href="documents/dss/186-2dsatestvectors.zip" target="_blank" class="zip">186-2 
+            DSA Test Vectors</a> </li>
+          <li> <a href="documents/dss/186-2rsatestvectors.zip" target="_blank" class="zip">186-2 
+            RSA Test Vectors</a> 
+            <ul>
+              <li> <a href="documents/dss/SigVer15EMTest.txt" target="_blank" class="txt">RSA 
+                SigVer PKCS1.5 Vulnerability Test Vectors</a> </li>
+              <li> <a href="documents/dss/SigVer931IRTest.txt" target="_blank" class="txt">RSA 
+                SigVer X9.31 Vulnerability Test Vectors</a> </li>
+            </ul>
+          </li>
+          <li> <a href="documents/dss/186-2ecdsatestvectors.zip" target="_blank" class="zip">186-2 
+            ECDSA Test Vectors</a> </li>
+        </ul>
+		        
+        <ul class="bullets1">
+          <li> <a href="documents/dss/186-3dsatestvectors.zip" target="_blank" class="zip">186-4 
+            DSA Test Vectors</a> </li>
+          <li> <a href="documents/dss/186-3rsatestvectors.zip" target="_blank" class="zip">186-4 
+            RSA Test Vectors</a> </li>
+          <li> <a href="documents/dss/186-3ecdsatestvectors.zip" target="_blank" class="zip">186-4 
+            ECDSA Test Vectors</a> </li>
+        </ul>
+        
+        <h4>Other Information:</h4>
+        <p>Elliptic curves recommended for Federal Government use are specified in 
+        Appendix 6 of <a href="../../../publications/PubsFIPSArch.html" target="_blank"><em>FIPS 
+        186-2 with Change Notice 1 dated October 5, 2001</em></a>. They are also 
+        listed separately: <a href="../../ST/toolkit/documents/dss/NISTReCur.pdf" target="_blank" class="pdf">PDF</a> 
+        and <a href="../../ST/toolkit/documents/dss/NISTReCur.doc" target="_blank" class="word">Word</a>.</p>
+        
+        <p><a href="#top" class="topLink">Back to Top</a></p>
+        <a name="03" id="03"></a><h2>Secure Hash Standard (SHS)</h2>
+        
+        <h3>(SHA-1, SHA-224, SHA-256, SHA-384, SHA-512,  SHA-512/224 and SHA-512/256 algorithms)</h3>
+        
+        <p>The <a href="../../ST/toolkit/secure_hashing.html">Secure Hash Algorithms</a> 
+          (SHA-1, SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224 and SHA-512/256) are specified in <a href="../../../publications/fips/fips180-4/fips-180-4.pdf" target="_blank" class="pdf">FIPS 
+          180-4 dated March 2012</a>, <em>Secure Hash Standard (SHS)</em>.</p>
+        
+        <h4>Testing Requirements:</h4>
+        <p><a href="../testing_labs/index.html">CST labs</a> can test for conformance 
+        to the SHA algorithms in FIPS 180-4. The testing requirements for these 
+        algorithms can be found in the document titled <a href="documents/shs/SHAVS.pdf" target="_blank" class="pdf">The 
+        Secure Hash Algorithm Validation System (SHAVS)</a>.</p>
+         
+        <h4>Validation List:</h4>
+        <p>NIST maintains the current <a href="documents/shs/shaval.htm" target="_blank">SHA 
+        Validation List</a>.</p> 
+        
+        <h4>Test Vectors:</h4>
+        <p>The following files provide an electronic version of the test vectors 
+          that can be used to informally verify the correctness of the SHA algorithm 
+          implementation using the SHAVS. These values are properly formatted 
+          in response (.rsp) files. Vendor response files should match this format 
+          exactly. </p>
+		
+          <p>If applicable, files with intermediate results (.txt) are supplied 
+          for the tests to aid in debugging. Please refer to the readme.txt file 
+          located in the zip files below for detailed explanations.</p>
+		
+          <p><strong>Use of these vectors does not take the place of validation 
+          obtained through the Cryptographic Algorithm Validation Program (CAVP). 
+          </strong> </p>
+        
+        <ul class="bullets1">
+          <li> <a href="documents/shs/shabittestvectors.zip" target="_blank" class="zip">SHA 
+            Test Vectors for Hashing Bit-Oriented Messages</a> </li>
+          <li> <a href="documents/shs/shabytetestvectors.zip" target="_blank" class="zip">SHA 
+            Test Vectors for Hashing Byte-Oriented Messages</a> </li>
+        </ul>
+        
+        <a href="#top" class="topLink">Back to Top</a> 
+        
+        <p><a name="04" id="04"></a></p>
+        <h2>Random Number Generators (RNG)</h2>
+        
+        <p>The algorithms for generating approved random numbers are referenced 
+          in <a href="../../../publications/fips/fips140-2/fips1402annexc.pdf" target="_blank" class="pdf">FIPS 
+          140-2 Annex C</a>.</p>
+        
+        <h4>Testing Requirements:</h4>
+        <p><a href="../testing_labs/index.html">CST labs</a> can test for conformance 
+        to the following RNG algorithms that are referenced in FIPS 140-2 Annex C:</p>
+         
+        <ul class="bullets1">
+          <li> <a href="../../../publications/PubsFIPSArch.html" target="_blank">FIPS 
+            186-2 with Change Notice 1 dated October 5, 2001</a> (Appendix 3.1 
+            and 3.2) </li>
+          <li> <strong>ANSI X9.31</strong> (Appendix A.2.4) - <em>Using 2-Key Single 
+            DES</em> </li>
+          <li> <a href="documents/rng/931rngext.pdf" target="_blank" class="pdf">NIST-Recommended 
+            Random Number Generator based on ANSI X9.31 Appendix A.2.4 using the 
+            3-Key Triple DES and AES algorithms</a> </li>
+          <li> <strong>ANSI X9.62</strong> (Appendix A.4).<br/>
+            Copies of the ANSI X9.31 and ANSI X9.62 standards are available from 
+            <a href="http://www.x9.org/" target="_top">X9</a>, a standards committee accredited by the American National Standards Institute (ANSI). NIST does NOT have copies of 
+            these standards available for distribution.</li>
+        </ul>
+        
+        <p>The testing requirements for these algorithms can be found in the document 
+          titled <a href="documents/rng/RNGVS.pdf" target="_blank" class="pdf">The Random 
+          Number Generator Validation System (RNGVS)</a>.</p>
+        
+        <h4>Validation List:</h4>
+        <p>NIST maintains the current <a href="documents/rng/rngval.html" target="_blank">RNG 
+        Validation List</a>.</p> 
+        
+        <h4>Test Vectors:</h4>
+        <p>RNG Test Vectors - These files provide an electronic version of the test 
+        vectors that can be used to informally verify the correctness of an RNG 
+        algorithm implementation using the RNGVS. <em><strong>However, use of 
+        these vectors does not take the place of validation obtained through the 
+        Cryptographic Algorithm Validation Program (CAVP). </strong></em> 
+        
+        <p><a href="documents/rng/rngtestvectors.zip" class="zip">RNG Test Vectors</a></p>
+        
+        <a href="#top" class="topLink">Back to Top</a> 
+        
+        <p><a name="05" id="05"></a></p>
+        <h2>Deterministic Random Bit Generators (DRBG)</h2>
+        
+        <p><a href="../../../publications/nistpubs/800-90A/SP800-90A.pdf" target="_blank" class="pdf"><em>SP 
+          800-90A Recommendation for Random Number Generation Using Deterministic 
+          Random Bit Generators</em></a> specifies mechanisms 
+          for the generation of random bits using deterministic methods. There 
+          are four mechanisms discussed in this Special Publication. These mechanisms 
+          are based on either hash functions (Hash_DRBG, HMAC_DRBG), block cipher 
+          algorithms using Counter mode (CTR_DRBG ) or number theoretic (Dual 
+          EC_DRBG) problems. </p>
+        
+        <h4>Testing Requirements:</h4>
+        <p>CST labs can test for conformance to the DRBG algorithms in Special Publication 
+        800-90. The testing requirements for this algorithm can be found in the 
+        document titled <a href="documents/drbg/DRBGVS.pdf" target="_blank" class="pdf">The 
+        DRBG Validation System (DRBGVS)</a>. <strong>Additional testing note:</strong> 
+        Each of the mechanisms containing underlying algorithms which must be 
+        validated as part of the DBRG validation. For HASH_DRBG, the SHA algorithm(s) 
+        must be tested. For HMAC_DRBG, the HMAC algorithm must be tested. For 
+        the block cipher algorithms using Counter mode CTR_DRBG, a NIST-Approved 
+        symmetric key algorithm using Counter mode, must be validated as part 
+        of the CMAC validation. Currently, NIST approves both the AES and TDES 
+        algorithms for use with DRBG. For Dual EC_DRBG, the ECDSA Key Generation 
+        function and the SHA algorithm must be tested. The ECDSA Key Generation 
+        function tests the point multiplication function used in the Dual EC_DRBG.</p> 
+        
+        <h4>Validation List:</h4>
+        <p>NIST maintains the current <a href="../cavp/documents/drbg/drbgval.html" target="_blank">DRBG 
+        Validation List</a>.</p>
+         
+        <h4>Test Vectors:</h4>
+        <p>DRBG Test Vectors - These files provide an electronic version of the 
+          test vectors that can be used to informally verify the correctness of 
+          a DRBG algorithm implementation using the DRBGVS. <strong>However, 
+          use of these vectors does not take the place of validation obtained 
+          through the Cryptographic Algorithm Validation Program (CAVP). </strong></p>
+        
+        <p><a href="documents/drbg/drbgtestvectors.zip" class="zip">DRBG Test Vectors</a>This zip file contains three separate zip file archives, one  each for Prediction Resistance Enabled, Prediction Resistance Not Enabled, and  Prediction Resistance Not Enabled and Reseed Function Not Supported.&nbsp; In  each zip file is a Readme.txt file describing its contents. </p>
+<a href="#top" class="topLink">Back to Top</a> </p>
+        
+        <p><a name="06" id="06"></a></p>
+        <h2>Key Management - Key Agreement Schemes (KAS) and Key Confirmation</h2>
+        
+        <p><a href="../../../publications/nistpubs/800-56A/SP800-56A_Revision1_Mar08-2007.pdf" target="_blank" class="pdf"><em>SP 
+          800-56A Recommendation for Pair-Wise Key Establishment Schemes Using 
+          Discrete Logarithm Cryptography (Revised March 2007)</em></a> specifies 
+          key establishment schemes based on standards developed by the Accredited 
+          Standards Committee (ASC) X9, Inc.: ANS X9.42 (Agreement of Symmetric 
+          Keys Using Discrete Logarithm Cryptography) and ANS X9.63 (Key Agreement 
+          and Key Transport Using Elliptic Curve Cryptography). </p>
+        
+        <h4>Testing Requirements:</h4>
+        <p>CST labs can test for conformance to the Key Agreement Schemes (KAS) and 
+        Key Confirmation algorithms specified in Special Publication 800-56A. 
+        The testing requirements for this algorithm can be found in the document 
+        titled <a href="documents/keymgmt/KASVS.pdf" target="_blank" class="pdf">The KAS Validation 
+        System (KASVS)</a>. <strong>Additional testing note:</strong> The KAS 
+        validation process requires additional prerequisite testing of the underlying 
+        DSA and/or ECDSA algorithm based on which type of cryptography is supported 
+        and which underlying cryptographic functions are supported, the supported 
+        SHA algorithm(s), supported MAC algorithm(s) (CCM, CMAC, and/or HMAC), 
+        and the supported RNG and/or DRBG algorithm(s). (See CAVP FAQ GEN.5 for 
+        more detailed information on prerequisites.) </p>
+        
+        <h4>Validation List:</h4>
+        <p>NIST maintains the current <a href="../cavp/documents/keymgmt/kasnewval.html" target="_blank">KAS 
+        Validation List</a>. </p>
+        
+        <h4>Test Vectors:</h4>
+        <p>KAS Test Vectors - These files provide an electronic version of the 
+          test vectors that can be used to informally verify the correctness of 
+          a key agreement scheme and key confirmation algorithm implementation 
+          using the KASVS. <em><strong>However, use of these vectors does not 
+          take the place of validation obtained through the Cryptographic Algorithm 
+          Validation Program (CAVP). </strong></em></p>
+        
+        <p><a href="documents/keymgmt/kastestvectors.zip" class="zip">KAS Test Vectors</a> 
+          See the KASVS document for an explanation of the files.</p>
+        
+        <a href="#top" class="topLink">Back to Top</a> 
+        
+        <p><a name="07" id="07"></a></p>
+        <h2>Message Authentication (MAC)</h2>
+        
+        <h3>Block Cipher-based MAC Algorithm (CMAC)</h3>
+        <p>The CMAC algorithm is specified in <a href="../../../publications/nistpubs/800-38B/SP_800-38B.pdf" target="_blank" class="pdf">Special Publication 800-38B</a> dated May 2005, Recommendation for Block Cipher 
+          Modes of Operation: The CMAC Mode for Authentication. CMAC can be considered 
+          a mode of operation of the block cipher because it is based on an approved 
+          symmetric key block cipher, such as the Advanced Encryption Standard 
+          (AES) algorithm currently specified in Federal Information Processing 
+          Standard (FIPS) Pub. 197. CMAC is also an approved mode of the Triple 
+          Data Encryption Algorithm (TDEA). </p>
+        
+        <p>NOTE: Replacement examples have been provided to correct the examples 
+          located in the back of SP800-38B. <a href="../../../publications/nistpubs/800-38B/Updated_CMAC_Examples.pdf" target="_blank" class="pdf">(Updated SP800-38B Examples)</a>. </p>
+        
+        <h4>Testing Requirements:</h4>
+        
+        <p>CST labs can test for conformance to the CMAC algorithm in Special Publication 
+        800-38B. The testing requirements for this algorithm can be found in the 
+        document titled <a href="documents/mac/CMACVS.pdf" target="_blank" class="pdf">The 
+        CMAC Validation System (CMACVS)</a>. <strong>Additional testing note:</strong> 
+        The CMAC validation process requires additional prerequisite testing of 
+        the underlying NIST-Approved symmetric key algorithm using any mode of 
+        operation used by the CMAC implementation that utilizes the forward cipher 
+        function. Currently, NIST approves both the AES and TDES algorithms for 
+        use with CMAC.</p> 
+        
+        <h4>Validation List:</h4>
+        
+        <p>NIST maintains the current CMAC Validations. CMAC Validations are included 
+        on the validation list of its approved symmetric key block cipher -- therefore 
+        it is included on either the <a href="documents/aes/aesval.html" target="_blank">AES Validation 
+        List</a> or the <a href="documents/des/tripledesval.html" target="_blank">TDES 
+        Validation List</a>.</p>
+         
+        <h4>Test Vectors:</h4>
+        <p>CMAC Test Vectors - These files provide an electronic version of the test 
+        vectors that can be used to informally verify the correctness of a CMAC 
+        algorithm implementation using the CMACVS. <em><strong>However, use of 
+        these vectors does not take the place of validation obtained through the 
+        Cryptographic Algorithm Validation Program (CAVP).</strong></em></p> 
+        
+        <p><a href="documents/mac/cmactestvectors.zip" class="zip">CMAC Test 
+          Vectors</a></p>
+        
+        <h3 style="border-top: 1px solid #E1E1E1;
+	padding-top: 10px;">Counter with Cipher Block Chaining-Message Authentication Code (CCM)</h3>
+        
+        <p>The Counter with Cipher Block Chaining-Message Authentication Code 
+          (CCM) is specified in <a href="../../../publications/nistpubs/800-38C/SP800-38C.pdf" target="_blank" class="pdf">Special 
+          Publication 800-38C</a> dated May, 2004, Counter with Cipher Block Chaining-Message 
+          Authentication Code (CCM). CCM is based on an approved symmetric key 
+          block cipher algorithm whose block size is 128 bits, such as the Advanced 
+          Encryption Standard (AES) algorithm currently specified in Federal Information 
+          Processing Standard (FIPS) Pub. 197 [2]; thus, CCM cannot be used with 
+          the Triple Data Encryption Algorithm [3], whose block size is 64 bits. 
+          Currently the only NIST-Approved 128 bit symmetric key algorithm is AES.</p>
+        
+        <h4>Testing Requirements:</h4>
+        <p>CST labs can test for conformance to the CCM algorithm in Special Publication 
+        800-38C. The testing requirements for this algorithm can be found in the 
+        document titled <a href="documents/mac/CCMVS.pdf" target="_blank" class="pdf">The 
+        Counter with Cipher Block Chaining-Message Authentication Code (CCM) Validation 
+        System (CCMVS)</a>. <strong>Additional testing note:</strong> The CCM 
+        validation process requires additional prerequisite testing of the underlying 
+        NIST-Approved 128 bit symmetric key algorithm using any mode of operation 
+        used by the CCM implementation that utilizes the forward cipher function. 
+        Currently, the only 128 bit symmetric key algorithm approved by NIST is AES.</p> 
+        
+        <h4>Validation List:</h4>
+        <p>NIST maintains the current CCM Validations. CCM Validations are included 
+        on the validation list of its approved symmetric key block cipher whose 
+        block size is 128 bits-- therefore it is included on the <a href="documents/aes/aesval.html" target="_blank">AES 
+        Validation List</a>. NIST maintains the original <a href="documents/mac/ccmval.html" target="_blank">CCM 
+        Validation List</a>. for historical purposes. The information contained 
+        on the CCM Validation List has been duplicated in the AES Validation List. </p> 
+        
+        <h4>Test Vectors:</h4>
+        <p>CCM Test Vectors - These files provide an electronic version of the test 
+        vectors that can be used to informally verify the correctness of a CCM 
+        algorithm implementation using the CCMVS. <em><strong>However, use of 
+        these vectors does not take the place of validation obtained through the 
+        Cryptographic Algorithm Validation Program (CAVP).</strong></em></p> 
+        
+        <p><a href="documents/mac/ccmtestvectors.zip" class="zip">CCM Test 
+          Vectors</a></p>
+        
+        <h3 style="border-top: 1px solid #E1E1E1;
+	padding-top: 10px;">Galois/Counter Mode (GCM) and GMAC</h3>
+        <p>The Galois/Counter Mode (GCM) and GMAC is specified in <a href="../../../publications/nistpubs/800-38D/SP-800-38D.pdf" target="_blank" class="pdf">Special Publication 800-38D</a> dated November, 2007, Recommendation for Block 
+          Cipher Modes of Operation: Galois/Counter Mode (GCM) and GMAC. GCM is 
+          based on an approved symmetric key block cipher algorithm whose block 
+          size is 128 bits, such as the Advanced Encryption Standard (AES) algorithm 
+          currently specified in Federal Information Processing Standard (FIPS) 
+          Pub. 197 [2]; thus, GCM cannot be used with the Triple Data Encryption 
+          Algorithm [3], whose block size is 64 bits. Currently the only NIST-Approved 
+          128 bit symmetric key algorithm is AES.</p>
+          
+        <h4>Testing Requirements:</h4>
+        <p>CST labs can test for conformance to the GCM and GMAC algorithms in Special 
+        Publication 800-38D. The testing requirements for this algorithm can be 
+        found in the document titled <a href="documents/mac/gcmvs.pdf" target="_blank" class="pdf">The 
+        Galois/Counter Mode (GCM) and GMAC Validation System (GCMVS)</a>. <strong>Additional 
+        testing note:</strong> The GCM validation process requires additional 
+        prerequisite testing of the underlying NIST-Approved 128 bit symmetric 
+        key algorithm using any mode of operation used by the GCM implementation 
+        that utilizes the forward cipher function. Currently, the only 128 bit 
+        symmetric key algorithm approved by NIST is AES. If the IVs are generated 
+        internally, the RNG or DRBG must also be validated. </p>
+        
+        <h4>Validation List:</h4>
+        <p>NIST maintains the current GCM Validations. GCM Validations are included 
+        on the validation list of its approved symmetric key block cipher whose 
+        block size is 128 bits-- therefore it is included on the <a href="documents/aes/aesval.html" target="_blank">AES 
+        Validation List</a>. 
+        
+        <h4>Test Vectors:</h4>
+        <p>GCM Test Vectors - These files provide an electronic version of the test 
+        vectors that can be used to informally verify the correctness of a GCM 
+        algorithm implementation using the GCMVS. <em><strong>However, use of 
+        these vectors does not take the place of validation obtained through the 
+        Cryptographic Algorithm Validation Program (CAVP).</strong></em> </p>
+        
+        <p><a href="documents/mac/gcmtestvectors.zip" target="_parent" class="zip">GCM Test 
+          Vectors</a></p>
+        
+        <h3 style="border-top: 1px solid #E1E1E1;
+	padding-top: 10px;">Keyed-Hash Message Authentication Code (HMAC)</h3>
+        <p>The Keyed-Hash Message Authentication Code (HMAC) is specified in <a href="../../../publications/fips/fips198/fips-198a.pdf" target="_blank" class="pdf">FIPS 
+          198</a> dated March 6, 2002, Keyed-Hash Message Authentication Code 
+          (HMAC). This algorithm utilizes the Secure Hash Algorithms as an underlying 
+          primitive.</p>
+          
+        <h4>Testing Requirements:</h4>
+        <p>CST labs can test for conformance to the HMAC algorithm in FIPS 198. The 
+        testing requirements for these algorithms can be found in the document 
+        titled <a href="documents/mac/HMACVS.pdf" target="_blank" class="pdf">The Keyed-Hash 
+        Message Authentication Code (HMAC) Validation System (HMACVS)</a>. <strong>Additional 
+        testing note: </strong>All underlying SHA algorithm(s) supported by the 
+        HMAC implementation must be validated as part of the HMAC validation.</p> 
+        
+        <h4>Validation List:</h4>
+        <p>NIST maintains the current <a href="documents/mac/hmacval.html" target="_blank">HMAC 
+        Validation List</a>.</p> 
+        
+        <h4>Test Vectors:</h4>
+        <p>HMAC Test Vectors - These files provide an electronic version of the test 
+        vectors that can be used to informally verify the correctness of an HMAC 
+        algorithm implementation using the HMACVS. <em><strong>However, use of 
+        these vectors does not take the place of validation obtained through the 
+        Cryptographic Algorithm Validation Program (CAVP).</strong></em></p> 
+        
+        <p><a href="documents/mac/hmactestvectors.zip" class="zip">HMAC Test 
+          Vectors</a></p>
+        <h3 style="border-top: 1px solid #E1E1E1;
+	padding-top: 10px;">
+        Key Wrapping  and Authenticated Encryption and Decryption (KW, KWP and TKW)</h3>
+        
+        <p><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-38F.pdf" target="_blank" class="pdf">NIST  SP 800-38F</a>, &ldquo;Recommendation for Block Cipher Modes of Operation: Methods for  Key Wrapping&rdquo; (December 2012), describes cryptographic methods that are  approved for &ldquo;key wrapping,&rdquo; i.e., the protection of the confidentiality and  integrity of cryptographic keys. In addition to describing existing methods,  this publication specifies two new, deterministic authenticated-encryption modes  of operation of the Advanced Encryption Standard (AES) algorithm: the AES Key  Wrap (KW) mode and the AES Key Wrap With Padding (KWP) mode. An analogous mode  with the Triple Data Encryption Algorithm (TDEA) as the underlying block  cipher, called TKW, is also specified, to support legacy applications.</p>
+        
+        <h3>Testing Requirements:</h3>
+        <p>CST labs can test for conformance to the KW, KWP and TKW algorithms in Special Publication 800-38F. The testing requirements for this algorithm can be found in the document titled <a href="documents/mac/KWVS.pdf" target="_blank" class="pdf">The Key Wrap Validation System (KWVS)</a>. Additional testing note: The KW and KWP validation process requires additional prerequisite testing of the underlying NIST-Approved 128 bit symmetric key algorithm.  Currently, the only 128 bit symmetric key algorithm approved by NIST is AES.  The TWK validation process requires addition prerequisite testing of the underlying TDEA symmetric key algorithm.
+        Please note that authenticated encryption (AE) with KW, KWP and TKW may use either the forward or inverse cipher function (e.g., KW-AE with AES-128 inverse cipher function).  Authenticated decryption (AD) algorithms (KW-AD, KWP-AD and TKW-AD) may also use either the forward or inverse cipher function.  Therefore, the prerequisite testing must exercise the corresponding forward or inverse cipher function in one of the fundamental modes of operation in NIST SP 800-38A. </p> 
+        
+        <h3>Validation List:</h3>
+        <p>NIST maintains the current KW, KWP and TKW Validations. KW and KWP Validations are included on the validation list of its approved symmetric key block cipher whose block size is 128 bits-- therefore it is included on the <a href="documents/aes/aesval.html" target="_blank">AES Validation List</a>.  TKW validations are included on the <a href="documents/des/tripledesval.html" target="_blank">TDES validation list</a>. </p>
+        <p>&nbsp;</p> 
+        <h3>Test Vectors:</h3>
+        <p>KW, KWP and TKW Test Vectors - These files provide an electronic version of the test vectors that can be used to informally verify the correctness of a KW, KWP or TKW algorithm implementation using the KWVS. <em><strong>However, use of 
+        these vectors does not take the place of validation obtained through the 
+        Cryptographic Algorithm Validation Program (CAVP).</strong></em></p> 
+        
+        <p><a href="documents/mac/kwtestvectors.zip" class="zip">Key Wrap Test 
+          Vectors</a></p>
+                   
+        <a href="#top" class="topLink">Back to Top</a> 
+        
+        <p><a name="10" id="10"></a> </p>
+        <h2>SP 800-108 Key Derivation Using Pseudorandom Functions - Key-Based - (KBKDF) </h2>
+        
+        <p><a href="../../../publications/nistpubs/800-108/sp800-108.pdf" target="_blank" class="pdf">SP 800-108</a> dated October 2009, Recommendation for Key Derivation Using Pseudorandom Functions specifies techniques for the derivation of additional keying material from a secret key, either established through a key establishment scheme or shared through some other manner, using pseudorandom functions. </p>
+        
+        <h4>Testing Requirements:</h4>
+        <p>CST labs can test for conformance to the Key-based Key Derivation Functions (KBKDF) specified in Special Publication 800-108. The testing requirements for this algorithm can be found in the document titled
+  <a href="documents/KBKDF800-108/kbkdfvs.pdf" target="_blank" class="pdf">The SP800-108 Key Derivation Function Validation System (KBKDFVS).</a>.</p>
+  
+        <p><strong>Additional testing note:</strong> The KBKDF validation process requires additional prerequisite testing of the underlying CMAC and/or HMAC algorithm based on which MAC algorithm is supported and, the underlying algorithm used to generate the key derivation key (SP800-56A KAS, SP800-90A DRBG, and/or RNG). (See CAVP FAQ GEN.5 for more detailed information on prerequisites.) </p> 
+        
+        <h4>Validation List:</h4>
+        <p>NIST maintains the current <a href="documents/KBKDF800-108/kbkdfval.htm" target="_blank">SP800-108 KBKDF Validation List. </a>. </p>
+         
+        <h4>Test Vectors:</h4>
+        <p>KBKDF Test Vectors - These files provide an electronic version of the test vectors that can be used to informally verify the correctness of Key Derivation Functions (KDF) using Counter Mode, Feedback Mode, and/or Double-Pipeline Iteration Mode via the validation testing described in the KBKDFVS. <em><strong>However, use of these vectors does not take the place of validation obtained through the Cryptographic Algorithm Validation Program (CAVP).</strong></em></p>
+        
+        <p>Test Vectors for SP 800-108 KDFs  See the KBKDFVS document for an explanation of the files.</p>
+        
+        <p><a href="documents/KBKDF800-108/CounterMode.zip" target="_parent" class="zip">KDF in Counter Mode Test Vectors</a></p>
+        
+        <p><a href="documents/KBKDF800-108/FeedbackModenocounter.zip" target="_parent" class="zip">KDF in Feedback Mode Test Vectors where no counter is used</a></p>
+        
+        <p><a href="documents/KBKDF800-108/FeedbackModewzeroiv.zip" target="_parent" class="zip">KDF in Feedback Mode Test Vectors where zero length IV is allowed</a></p>
+        
+        <p><a href="documents/KBKDF800-108/FeedbackModeNOzeroiv.zip" target="_parent" class="zip">KDF in Feedback Mode Test Vectors where zero length IV is not allowed</a></p>
+        
+        <p><a href="documents/KBKDF800-108/PipelineModeWOCounter.zip" target="_parent" class="zip">KDF in Double-Pipeline Iteration Mode Test Vectors where no counter is used</a></p>
+        
+        <p><a href="documents/KBKDF800-108/PipelineModewithCounter.zip" target="_parent" class="zip">KDF in Double-Pipeline Iteration Mode Test Vectors where counter is used</a></p>
+        
+        <p><a name="09" id="09"></a> </p>
+        <h2>Algorithm Component Validation Testing </h2>
+        
+        <p>Beginning in 2011, the CAVP offers the validation of algorithm components. 
+          There exists an increased need for the testing of individual components 
+          of approved algorithms. Some examples of situations where algorithm 
+          component testing will be required includes PIV Smartcard applications, 
+          where there are processing limitations, and situations where parts of 
+          special publications can be used with components outside the special 
+          publication. The components for which we have validation testing are 
+          listed below.</p>
+        
+        <h3>SP 800-56A Elliptic Curve Cryptography Cofactor Diffie-Hellman (ECC CDH) Primitive Testing</h3>
+        
+        <p>The testing of only the SP800-56A Section 5.7.1.2 <em>Elliptic Curve 
+          Cryptography Cofactor Diffie-Hellman (ECC CDH) Primitive</em>.</p>
+        
+        <ul class="bullets1">
+          <li> <a href="../../../publications/nistpubs/800-56A/SP800-56A_Revision1_Mar08-2007.pdf" target="_blank" class="pdf">NIST SP 800-56A </a>, <em>Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography (Revised March 2007), Section 5.7.1.2</em>.</li>
+        </ul>
+        
+        <h4>Testing Requirements:</h4>
+        <p>Validation testing for SP800-56A Section 5.7.1.2 ECC CDH Primitive component 
+        testing is handled by the Cryptographic Algorithm Validation Program's 
+        (<a href="../cavp/index.html">CAVP</a>) <a href="../testing_labs/index.html">CST labs</a>. </p> 
+        
+        <ul class="bullets1">
+          <li>ECC CDH Primitive tests are described in <a href="documents/components/ecccdhvs.pdf" target="_blank" class="pdf">The 
+            Elliptic Curve Cryptography Cofactor Diffie_Hellman (ECC CDH) Primitive Validation System (ECC_CDHVS)</a>. </li>
+        </ul>
+        
+        <h4>Validation List:</h4>
+        <p>NIST maintains the current <a href="documents/components/componentnewval.html" target="_blank">Component 
+        Validation List</a>. This CVL contains the validated implementations of 
+        the ECC CDH Primitive. </p>
+        
+        <h4>Other Information:</h4>
+        <ul class="bullets1">
+          <li> <a href="documents/components/ecccdhtestvectors.zip" target="_blank" class="zip">ECC CDH Primitive 
+            Test Vectors</a> - This file provides an electronic version of the 
+            test vectors that can be used to informally verify the correctness 
+            of the SP 800-56A Section 5.7.1.2 ECC CDH Primitive component testing, 
+            using the validation tests described in <a href="documents/components/ecccdhvs.pdf" target="_blank" class="pdf">The 
+            Elliptic Curve Cryptography Cofactor Diffie_Hellman (ECC CDH) Primitive 
+            Validation System (ECC_CDHVS)</a>. <em><strong>However, use of 
+            these vectors does not take the place of validation obtained through 
+            the Cryptographic Algorithm Validation Program (CAVP). </strong></em></li>
+        </ul>
+        
+        <h3 style="border-top: 1px solid #E1E1E1;
+	padding-top: 10px;">SP 800-135 Revision 1 Recommendation for Existing Application-Specific Key Derivation Functions</h3>
+        
+        <p>Validation testing for each individual key derivation function in <a href="../../../publications/nistpubs/800-135-rev1/sp800-135-rev1.pdf" target="_blank" class="pdf">NIST SP 800-135 (Revision 1)</a>
+ Recommendation for Existing Application-Specific Key Derivation Functions December 2011.</p>
+        
+        <h4>Testing Requirements:</h4>
+        <p>Validation testing for SP800-135 key derivation functions (KDF) component testing is handled by the Cryptographic Algorithm Validation Program's (<a href="../cavp/index.html">CAVP</a>) <a href="../testing_labs/index.html">CST labs</a>. </p>
+        
+        <ul class="bullets1">
+          <li>SP800-135 validation tests are described in <a href="documents/components/askdfvs.pdf" target="_blank" class="pdf">The SP800-135 Validation System)</a>. </li>
+        </ul>
+        
+        <h4>Validation List:</h4>
+        <p>NIST maintains the current <a href="documents/components/componentnewval.html" target="_blank">Component 
+        Validation List</a>. This CVL contains the validated implementations of the KDFs described in SP800-135. </p>
+        
+        <h4>Other Information:</h4>
+        <p>The following files provide an electronic version of the test vectors that can be used to informally verify the correctness of the KDF algorithm implementation using the ASKDFVS. These values are properly formatted in response (.rsp) files. Vendor response files should match this format exactly.  If applicable, files with intermediate results (.txt) are supplied for the tests to aid in debugging. Please refer to the readme.txt file located in the zip files below for detailed explanations.
+<em><strong>However, use of these vectors does not take the place of validation obtained through the Cryptographic Algorithm Validation Program (CAVP). </strong></em></p>
+            
+            <ul class="bullets1">
+              <li> <a href="documents/components/800-135testvectors/ikev1.zip" target="_parent" class="zip">IKEv1 KDF Test Vectors</a> </li>
+              <li> <a href="documents/components/800-135testvectors/ikev2.zip" target="_parent" class="zip">IKEv2 KDF Test Vectors</a> </li>
+              <li> <a href="documents/components/800-135testvectors/tls.zip" target="_parent" class="zip">TLS KDF Test Vectors</a> </li>
+              <li> <a href="documents/components/800-135testvectors/ansx963_2001.zip" target="_parent" class="zip">ANS X9.63-2001 KDF Test Vectors</a> </li>
+              <li> <a href="documents/components/800-135testvectors/ssh.zip" target="_parent" class="zip">SSH KDF Test Vectors</a></li>
+              <li> <a href="documents/components/800-135testvectors/srtp.zip" target="_parent" class="zip">SRTP KDF Test Vectors</a></li>
+              <li> <a href="documents/components/800-135testvectors/snmp.zip" target="_parent" class="zip">SNMP KDF Test Vectors</a></li>
+              <li> <a href="documents/components/800-135testvectors/tpm.zip" target="_parent" class="zip">TPM KDF Test Vectors</a> </li>
+              </ul>
+
+       <h3 style="border-top: 1px solid #E1E1E1;
+	padding-top: 10px;">FIPS 186-4 ECDSA Signature Generation Component Testing</h3>
+        
+        <p>This component test assumes the IUT requires hash sized messages as input to the Signature Generation function.  This validation test was designed for applications like the PIV card.</p>
+        
+        <h4>Testing Requirements:</h4>
+        <p>Validation testing for FIPS 186-4 ECDSA Signature Generation component 
+        testing is handled by the Cryptographic Algorithm Validation Program's 
+        (<a href="../cavp/index.html">CAVP</a>) <a href="../testing_labs/index.html">CST labs</a>. </p> 
+        
+        <ul class="bullets1">
+          <li>FIPS 186-4 ECDSA Signature Generation component testing is the same as ECDSA Signature Generation tests except the length of the input message is the length of the hash value supported.  Please see the Signature Generation tests described in <a href="documents/dss2/ecdsa2vs.pdf" target="_blank" class="pdf">The 
+            Elliptic Curve Digital Signature Algorithm Validation System (ECDSA2VS)</a>. </li>
+        </ul>
+        
+        <h4>Validation List:</h4>
+        <p>NIST maintains the current <a href="documents/components/componentnewval.html" target="_blank">Component 
+        Validation List</a>. This CVL contains the validated implementations of 
+        the FIPS 186-4 ECDSA Signature Generation Component Primitive Testing. </p>
+        
+       <h4>Other Information:</h4>
+        <ul class="bullets1">
+          <li> <a href="documents/components/186-3ecdsasiggencomponenttestvectors.zip" target="_blank" class="zip">FIPS 186-4 ECDSA Signature Generation Component 
+            Test Vectors</a> - This file provides an electronic version of the 
+            test vectors that can be used to informally verify the correctness 
+            of the FIPS 186-4 Signature Generation component testing, 
+            using the validation tests described in <a href="documents/dss2/ecdsa2vs.pdf" target="_blank" class="pdf">The 
+            Elliptic Curve Digital Signature Algorithm Validation System (ECDSA2VS)</a>. <em><strong>However, use of 
+            these vectors does not take the place of validation obtained through 
+            the Cryptographic Algorithm Validation Program (CAVP). </strong></em></li>
+        </ul> 
+  
+       <h3 style="border-top: 1px solid #E1E1E1;
+	padding-top: 10px;">FIPS 186-4 RSA PKCS1-v1_5 RSASP1 Signature Primitive Component Testing</h3>
+        
+        <p>This component test tests the RSASP1 function as described in PKCS#1 v2.1:RSA Cryptography Standard, June 14,2002.  This validation test was designed for applications like the PIV card.</p>
+        
+        <h4>Testing Requirements:</h4>
+        <p>Validation testing for FIPS 186-4 RSA PKCS1-v1_5 RSASP1 Signature Primitive Component 
+        testing is handled by the Cryptographic Algorithm Validation Program's 
+        (<a href="../cavp/index.html">CAVP</a>) <a href="../testing_labs/index.html">CST labs</a>. </p> 
+        
+        <ul class="bullets1">
+          <li>FIPS 186-4 RSA PKCS1-v1_5 RSASP1 Signature Primitive Component testing inputs messages in the encoded message EM format for PKCS1-v1_5. It returns the signature s. </li>
+        </ul>
+        
+        <h4>Validation List:</h4>
+        <p>NIST maintains the current <a href="documents/components/componentnewval.html" target="_blank">Component 
+        Validation List</a>. This CVL contains the validated implementations of 
+        the FIPS 186-4 RSA PKCS1-v1_5 RSASP1 Signature Primitive Component Testing. </p>
+     
+       <h4>Other Information:</h4>
+        <ul class="bullets1">
+          <li> <a href="documents/components/RSA2SP1testvectors.zip" target="_blank" class="zip">FIPS 186-4 RSA PKCS1-v1_5 RSASP1 Signature Primitive Component 
+            Test Vectors</a> - This file provides an electronic version of the 
+            test vectors that can be used to informally verify the correctness 
+            of the FIPS 186-4 Signature Primitive component testing, 
+            using the validation tests described in <a href="documents/components/RSA2SP1VS.pdf" target="_blank" class="pdf">The 
+            RSASP1 Signature Primitive Validation System (RSASP1VS)</a>. <em><strong>However, use of 
+            these vectors does not take the place of validation obtained through 
+            the Cryptographic Algorithm Validation Program (CAVP). </strong></em></li>
+        </ul>             
+
+
+       <h3 style="border-top: 1px solid #E1E1E1;
+	padding-top: 10px;">FIPS 186-4 RSA PKCS1-vPSS RSASP1 Signature Primitive Component Testing</h3>
+        
+        <p>This component test tests the RSASP1 function as described in PKCS#1 v2.1:RSA Cryptography Standard, June 14,2002.  This validation test was designed for applications like the PIV card.</p>
+        
+        <h4>Testing Requirements:</h4>
+        <p>Validation testing for FIPS 186-4 RSA PKCS1-vPSS RSASP1 Signature Primitive Component 
+        testing is handled by the Cryptographic Algorithm Validation Program's 
+        (<a href="../cavp/index.html">CAVP</a>) <a href="../testing_labs/index.html">CST labs</a>. </p> 
+        
+        <ul class="bullets1">
+          <li>FIPS 186-4 RSA PKCS1-v1_5 RSASP1 Signature Primitive Component testing inputs messages in the encoded message EM format for PKCS1-vPSS. It returns the signature s verifying the correct result. </li>
+        </ul>
+        
+        <h4>Validation List:</h4>
+        <p>NIST maintains the current <a href="documents/components/componentnewval.html" target="_blank">Component 
+        Validation List</a>. This CVL contains the validated implementations of 
+        the FIPS 186-4 RSA PKCS1-vPSS RSASP1 Signature Primitive Component Testing. </p>
+        
+       <h4>Other Information:</h4>
+        <ul class="bullets1">
+          <li> <a href="documents/components/RSA2SP1testvectors.zip" target="_blank" class="zip">FIPS 186-4 RSA PKCS1-PSS RSASP1 Signature Primitive Component 
+            Test Vectors</a> - This file provides an electronic version of the 
+            test vectors that can be used to informally verify the correctness 
+            of the FIPS 186-4 Signature Primitive component testing, 
+            using the validation tests described in <a href="documents/components/RSA2SP1VS.pdf" target="_blank" class="pdf">The 
+            RSASP1 Signature Primitive Validation System (RSASP1VS)</a>. <em><strong>However, use of 
+            these vectors does not take the place of validation obtained through 
+            the Cryptographic Algorithm Validation Program (CAVP). </strong></em></li>
+        </ul>
+        
+        <h3 style="border-top: 1px solid #E1E1E1;
+	padding-top: 10px;"> RSADP Decryption Operation Primitive Component Testing</h3>
+        <p>This component test tests the RSADP Decryption Operation  Primitive Component 
+        as specified in Section 7.1.2 of the NIST SP 800-56B: Recommendation for Pair-Wise Key Establishment Schemes Using Integer Factorization Cryptography (August 2009) and in Section 5.1.2 of the PKCS#1 v2.1: RSA Cryptography Standard (June 14, 2002).  This primitive is used by the key transport scheme referenced in both documents above. This validation test was designed for applications like the PIV card.</p>
+        <h4>Testing Requirements:</h4>
+        <p>Validation testing for the RSADP Decryption Operation Primitive Component 
+          testing is handled by the Cryptographic Algorithm Validation Program's 
+          (<a href="../cavp/index.html">CAVP</a>) <a href="../testing_labs/index.html">CST labs</a>. </p>
+        <ul class="bullets1">
+          <li>RSADP Decryption Operation Primitive Component testing validates the correctness of the basic decryption operation.</li>
+        </ul>
+        
+        <h4>Validation List:</h4>
+        <p>NIST maintains the current <a href="documents/components/componentnewval.html" target="_blank">Component 
+          Validation List</a>. This CVL contains the validated implementations of 
+          the RSADP Decryption Operation Primitive Component Testing. </p>
+          
+        <h4>Other Information:</h4>
+        <ul class="bullets1">
+          <li> <a href="documents/components/RSADPtestvectors.zip" target="_blank" class="zip">RSADP Decryption Operation Primitive Component 
+            Test Vectors</a> - This file provides an electronic version of the 
+            test vectors that can be used to informally verify the correctness 
+            of the RSADP Decryption Operation Primitive component testing, 
+            using the validation tests described in <a href="documents/components/RSADPVS.pdf" target="_blank" class="pdf">The 
+              RSADP Decryption Operation Primitive Component Validation System (RSADPVS)</a>. <em><strong>However, use of 
+                these vectors does not take the place of validation obtained through 
+                the Cryptographic Algorithm Validation Program (CAVP). </strong></em></li>
+        </ul>
+        <p>&nbsp;</p>   
+
+             <a href="#top" class="topLink">Back to Top</a> 
+        
+        <h2>Retired Validation Testing</h2>
+        
+        <h3>Data Encryption Standard (DES)</h3>
+        
+        <p>FIPS 46-3, Data Encryption Standard (DES), was withdrawn May 19, 2005 
+          because the cryptographic algorithm no longer provided the security that 
+          is needed to protect Federal government information. DES is no longer 
+          an Approved algorithm. The DES Algorithm Validation Webpage is still 
+          accessible via the Validations List webpage, for historical purposes 
+          only.</p>
+        
+        <h3>Data (Message) Authentication Code (MAC) and Key Management Using 
+          ANSI X9.17</h3>
+        
+        <p>The automated conformance tests for FIPS 113 and 171 are no longer 
+          operational. Currently, if a FIPS 140-1 or FIPS 140-2 cryptographic 
+          module implements either of these two standards, the <a href="../testing_labs/index.html">CST 
+          testing laboratories</a> perform some testing that these FIPS requirements 
+          are implemented correctly in the cryptographic module.</p>
+        
+        <h3>Message Authentication Code (MAC), FIPS 113</h3>
+        <p>The MAC Validation System (MVS) tested for compliance with <a href="../../../publications/fips/fips113/fips113.html" target="_blank">FIPS 113</a>, Computer Data Authentication. A list of <a href="documents/des/mvsval.htm" target="_blank">validated 
+        products</a> is maintained by the Security Technology Group.</p> 
+        
+        <h3>Key Management Using ANSI X9.17, FIPS 171</h3>
+        <p>The Key Management Validation System (KMVS) tested for compliance with 
+        FIPS 171, Key Management Using ANSI X9.17. A list of <a href="documents/des/kmvsval.htm">validated 
+        products</a> is maintained by the Security Technology Group.</p> <br/>
+        
+      </div>
+    </div>
+  </div>
+  <!-- PAGE FOOTER STARTS HERE: INFO, CONTACT EMAIL, UPDATE/CREATE DATES -->
+  <div id="footer"> 
+    <div id="footer-info"> 
+      <!-- INSERT CONTACT INFO FOR THIS SECTION HERE.  DEFAULT CONTACT: CSRC WEBMASTER -->
+      <a href="mailto:webmaster-csrc@nist.gov">CSRC Webmaster</a>, <a href="http://www.nist.gov/public_affairs/disclaimer.cfm" target="_blank">Disclaimer 
+      Notice</a> &amp; <a href="http://www.nist.gov/public_affairs/privacy.cfm" target="_blank">Privacy 
+      Policy</a><br/>
+      <a href="http://www.nist.gov/" target="_blank">NIST</a> is an Agency of 
+      the <a href="http://www.commerce.gov" title="http://www.commerce.gov">U.S. 
+      Department of Commerce</a> </div>
+    <!-- INSERT CREATION DATE.  LAST UPDATED DATE IS AUT><!-- #BeginDate format:Am1 -->May 23, 2014<!-- #EndDate -->pdated: 
+      <!-- #BeginDate format:Am1 -->May 23, 2014<!-- #EndDate -->
+      <br/>
+      Page created: January 28, 1996 </div>
+  </div>
+  <!-- FOOTER SECTION ENDS HERE -->
+</div>
+
+
+
+</body>
+
+
+
+</html>
