@@ -1,8 +1,8 @@
 # NIST textvectors
 
 NIST provides testvectors through (at least) two different processes.
-["Crypto Toolkit"][http://csrc.nist.gov/groups/ST/toolkit/] test vectors 
-are generally those published during publicatin of a standard. [CAVP][http://csrc.nist.gov/groups/STM/cavp/]
+["Crypto Toolkit"](http://csrc.nist.gov/groups/ST/toolkit/) test vectors 
+are generally those published during publicatin of a standard. [CAVP](http://csrc.nist.gov/groups/STM/cavp/)
 (Cryptographic Algorithm Validation Program) test vectors
 are generated for the use of labs that check FIPS-compliance.
 
