@@ -1,5 +1,15 @@
 # NIST textvectors
-## NIST cryptographic standard test-vectors in text
+
+NIST provides testvectors through (at least) two different processes.
+["Crypto Toolkit"][http://csrc.nist.gov/groups/ST/toolkit/] test vectors 
+are generally those published during publicatin of a standard. [CAVP][http://csrc.nist.gov/groups/STM/cavp/]
+(Cryptographic Algorithm Validation Program) test vectors
+are generated for the use of labs that check FIPS-compliance.
+
+This repo contains both, in the same place.
+
+
+## NIST Crypto Toolkit test-vectors in text
 
 NIST CSRC's Crypto Toolkit helpfully provides test vectors as PDFs.
 
@@ -11,30 +21,15 @@ Currently, only the FIPS-202 (draft) test-vectors for the SHA-3 and
 SHAKE functions are *parsed*; C initializers are dumped for them in
 the `fips202` directory.
 
-## Note
+### Note
 
 The only official source for test vectors is the
 [Crypto Toolkit](http://csrc.nist.gov/groups/ST/toolkit/examples.html).
 This repository is not endorsed by NIST.
 
-## Contributing
+### Reproducing
 
-Pull requests welcome.
-
-Please email me AND file an issue if a parsed test-vector is incorrect.
-
-Let me know if there is an output format which would be more useful
-for you.
-
-Approximate guidelines for contributions:
-  - Minimal dependencies
-  - Shell scripts: no bashisms; only POSIX utilities called with
-    POSIX parameters, wget, or parallel
-  - Python scripts: Python3-clean
-
-## Reproducing
-
-### Dependencies
+#### Dependencies
 
 POSIX-compatible environment and Python >= 2.7.
 
@@ -64,10 +59,25 @@ Package versions recommended:
   - parallel >= 20140322
   - more_itertools >= 2.2
 
-### Running
+#### Running
 
 To reproduce, have the dependencies in `dependencies.txt` in your
 `PATH` and do:
       ./do
 
 (The full set of PDFs this will pull is 78M.)
+
+## Contributing
+
+Pull requests welcome.
+
+Please email me AND file an issue if a parsed test-vector is incorrect.
+
+Let me know if there is an output format which would be more useful
+for you.
+
+Approximate guidelines for contributions:
+  - Minimal dependencies
+  - Shell scripts: no bashisms; only POSIX utilities called with
+    POSIX parameters, wget, or parallel
+  - Python scripts: Python3-clean
